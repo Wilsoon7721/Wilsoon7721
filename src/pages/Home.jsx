@@ -1,72 +1,89 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styles/Home.css';
-import { useEffect } from 'react';
 import '@fontsource/roboto/100.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/700.css';
-function Home() {
-    useEffect(() => {
-        let bits = document.querySelectorAll('.bit');
-        let onColor = '#d3d3d3';
-        bits.forEach((bit) => {
-            bit.addEventListener('click', () => {
-                if (bit.style.backgroundColor === onColor) {
-                    bit.style.backgroundColor = 'transparent';  // Off
-                } else {
-                    bit.style.backgroundColor = onColor; // On
-                }
-            });
-        });
+import _ from 'lodash';
 
-        // Cleanup event listeners when component unmounts
-        return () => {
-            bits.forEach((bit) => {
-                bit.removeEventListener('click', () => { });
-            });
+function Home() {
+    const [animations, setAnimations] = useState([]);
+    const [activeBits, setActiveBits] = useState([]);
+
+    let buildArtAnimation = (initialState, onInterval, ...onBitIDs) => {
+        return {
+            initialState: initialState,
+            onInterval: onInterval,
+            onBitIDs: onBitIDs
         };
+    };
+
+    useEffect(() => {
+        setAnimations([
+            // First animation is smiley, second animation is a 'W' letter, third animation is a spiral, last animation is random
+            buildArtAnimation(false, 500, 2, 4, 11, 17, 18, 19, 15),
+            buildArtAnimation(false, 300, 1, 6, 11, 17, 13, 19, 15, 10, 5),
+            buildArtAnimation(false, 300, 23, 22, 21, 16, 11, 6, 1, 2, 3, 4, 5, 10, 15, 20, 25, 24, 19, 14, 9, 8, 7, 12, 17, 18, 13),
+            buildArtAnimation(false, 300, ..._.shuffle(Array.from({ length: 25 }, (_, i) => i + 1)))
+        ]);
     }, []);
+
+
+    const runAnimation = (animation) => {
+        const { onInterval, onBitIDs } = animation;
+        let currentBits = [];
+
+        return new Promise((resolve) => {
+            let index = 0;
+            const intervalId = setInterval(() => {
+                currentBits = [...currentBits, onBitIDs[index]];
+
+                setActiveBits(currentBits);
+
+                index++;
+                if (currentBits.length === onBitIDs.length) {
+                    clearInterval(intervalId);
+                    setTimeout(() => resolve(), 1000);
+                }
+            }, onInterval);
+        });
+    };
+
+    useEffect(() => {
+        const runAllAnimations = async () => {
+            while (true) {
+                for (let animation of animations) {
+                    await runAnimation(animation);
+                }
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+        };
+
+        if (animations.length > 0)
+            runAllAnimations();
+    }, [animations]);
 
     return (
         <div className="intro-container">
             <div className="intro-art">
                 <div id="grid-container">
-                    <div className="bit" id="bit-1"></div>
-                    <div className="bit" id="bit-2"></div>
-                    <div className="bit" id="bit-3"></div>
-                    <div className="bit" id="bit-4"></div>
-                    <div className="bit" id="bit-5"></div>
-
-                    <div className="bit" id="bit-6"></div>
-                    <div className="bit" id="bit-7"></div>
-                    <div className="bit" id="bit-8"></div>
-                    <div className="bit" id="bit-9"></div>
-                    <div className="bit" id="bit-10"></div>
-
-                    <div className="bit" id="bit-11"></div>
-                    <div className="bit" id="bit-12"></div>
-                    <div className="bit" id="bit-13"></div>
-                    <div className="bit" id="bit-14"></div>
-                    <div className="bit" id="bit-15"></div>
-
-                    <div className="bit" id="bit-16"></div>
-                    <div className="bit" id="bit-17"></div>
-                    <div className="bit" id="bit-18"></div>
-                    <div className="bit" id="bit-19"></div>
-                    <div className="bit" id="bit-20"></div>
-
-                    <div className="bit" id="bit-21"></div>
-                    <div className="bit" id="bit-22"></div>
-                    <div className="bit" id="bit-23"></div>
-                    <div className="bit" id="bit-24"></div>
-                    <div className="bit" id="bit-25"></div>
+                    {[...Array(25)].map((_, index) => {
+                        const id = `bit-${index + 1}`;
+                        return (
+                            <div
+                                key={id}
+                                id={id}
+                                className={`bit ${activeBits.includes(index + 1) ? 'on' : ''}`}
+                            ></div>
+                        );
+                    })}
                 </div>
             </div>
             <div className="intro-text-content">
-                <h1 className="intro-header">Hi, my name is Wilson</h1>
+                <h1 className="intro-header">Hi, my name is Wilson Oon</h1>
                 <p className="intro-subheader">I'm a <b>full-stack developer</b> based in Singapore.</p>
             </div>
         </div>
-    )
+    );
 }
 
 export default Home;

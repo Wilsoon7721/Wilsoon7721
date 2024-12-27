@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import lightTheme from './themes/lightTheme';
-import darkTheme from './themes/darkTheme';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import '@fontsource/roboto';
