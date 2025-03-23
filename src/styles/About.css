@@ -1,0 +1,120 @@
+@keyframes contentBriefText {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-container {
+    background-color: #c2fcb7;
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-content-brief {
+    border-bottom: 0.5px solid #36454f;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.about-content-projects {
+    border-bottom: 0.5px solid #36454f;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.about-content-brief-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 80px;
+    justify-content: center;
+    max-width: 60%;
+    margin-right: 10px;
+}
+
+.about-content-brief-text p {
+    font-size: 1.35rem;
+    opacity: 0;
+    animation: contentBriefText 1s ease-in-out forwards;
+}
+
+.about-content-brief-text p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.about-content-brief-text p:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.about-content-brief-text p:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.about-content-brief-images {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-item,
+.carousel-inner {
+    width: 100% !important;
+}
+
+.carousel-item img {
+    width: auto;
+    max-width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+
+    .carousel-item img {
+        max-height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-content-brief {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about-content-brief-text {
+        max-width: 100%;
+        font-size: 1.15rem;
+    }
+
+    .about-content-brief-images {
+        height: 100%;
+        width: 100%;
+    }
+
+    .carousel-item img {
+        max-height: 450px;
+    }
+}

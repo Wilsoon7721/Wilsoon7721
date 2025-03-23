@@ -1,41 +1,13 @@
 html,
 body {
   margin: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 #root {
-  height: 100%;
   width: 100%;
-}
-
-.themeSetter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  z-index: 1000;
-  padding: 50px 50px;
-  background-color: #cacaca;
-  color: black;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+  height: 100%;
   margin: 0;
-  padding: 10px;
-}
-
-.themeSetter img {
-  width: 25px;
-  height: 25px;
-}
-
-.themeSetter span {
-  text-align: center;
-  margin-left: 5px;
 }

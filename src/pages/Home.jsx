@@ -4,11 +4,12 @@ import '@fontsource/roboto/100.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/700.css';
 import _ from 'lodash';
-import { useSpring, animated } from '@react-spring/web'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
     const [animations, setAnimations] = useState([]);
     const [activeBits, setActiveBits] = useState([]);
+    const navigate = useNavigate();
 
     let buildArtAnimation = (initialState, onInterval, ...onBitIDs) => {
         return {
@@ -88,10 +89,18 @@ function Home() {
     };
 
     useEffect(() => {
+        let ended = false;
         const runAllAnimations = async () => {
-            while (true) {
+            let animationNumber = 0;
+            while (!ended) {
                 for (let animation of animations) {
                     await runAnimation(animation);
+                    animationNumber++;
+                    // Stop at smiley
+                    if (animationNumber >= 9) {
+                        ended = true;
+                        break;
+                    }
                 }
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
@@ -99,6 +108,8 @@ function Home() {
 
         if (animations.length > 0)
             runAllAnimations();
+
+        return () => ended = true;
     }, [animations]);
 
     useEffect(() => {
@@ -137,7 +148,7 @@ function Home() {
             </div>
 
             <div className='intro-buttons-container' style={{ opacity: 0 }}>
-                <button className="intro-btn">About Me</button>
+                <button className="intro-btn" onClick={() => navigate('/about')}>About Me</button>
                 <button className="intro-btn">Contact</button>
             </div>
         </div>
