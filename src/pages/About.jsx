@@ -1,7 +1,50 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../styles/About.css';
+import TechStackCard from '../components/TechStackCard';
+
+const techCards = [
+    {
+        category: 'Programming Language',
+        title: 'ABC',
+        description: 'VERYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY',
+        image: 'await_image.png'
+    },
+    {
+        category: 'Programming Language',
+        title: 'DEF',
+        description: 'LOL',
+        image: 'await_image.png'
+    },
+    {
+        category: 'Programming Language',
+        title: 'GHI',
+        description: 'LOL',
+        image: 'await_image.png'
+    },
+    {
+        category: 'Framework',
+        title: 'JKL',
+        description: 'LOL',
+        image: 'await_image.png'
+    },
+    {
+        category: 'Service',
+        title: 'LMN',
+        description: 'LOL',
+        image: 'await_image.png'
+    },
+    {
+        category: 'Database',
+        title: 'OPQ',
+        description: 'LOL',
+        image: 'await_image.png'
+    },
+]
+
+const techColors = ['#FFF833', '#FE5A34', '#32EBFF'];
 
 const About = () => {
+    const stackRef = useRef(null);
     return (
         <div className='about-container'>
             <h3 style={{ textAlign: 'center', marginTop: '3.5%', marginBottom: 0 }}>About Me</h3>
@@ -12,7 +55,7 @@ const About = () => {
                     <p>Now, I mostly spend my time experimenting with new project ideas and seeing what I could make out of the programming languages and services that I know, while also learning new ones.</p>
                 </div>
                 <div className='about-content-brief-images'>
-                    <div id="about-content-brief-carousel" className="carousel slide" data-bs-keyboard="false" data-bs-pause="hover" data-bs-ride="carousel">
+                    <div id="about-content-brief-carousel" style={{ opacity: 0, animation: 'contentBriefImages 1s ease-in-out forwards', animationDelay: '1s' }} className="carousel slide" data-bs-keyboard="false" data-bs-pause="hover" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active" data-bs-interval="4000">
                                 <img src="await_image.png" className="d-block" />
@@ -29,6 +72,18 @@ const About = () => {
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
                             <span className="visually-hidden">Next</span>
                         </button>
+                    </div>
+                </div>
+            </div>
+            <div ref={stackRef} className='about-content-stack'>
+                <h3 style={{ marginTop: '50px' }}>Tech Stack</h3>
+                <div className="tech-stack-scroll-container">
+                    <div className='tech-stack-scroll'>
+                        {[...techCards, ...techCards].map((card, index) => {
+                            return (
+                                <TechStackCard scrollFunc={() => stackRef.current?.scrollIntoView({ behaviour: 'smooth', block: 'center' })} category={card.category} title={card.title} image={card.image} description={card.description} backgroundColor={techColors[index % techColors.length]} key={index} />
+                            )
+                        })}
                     </div>
                 </div>
             </div>
