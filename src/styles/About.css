@@ -32,6 +32,16 @@
     }
 }
 
+@keyframes techCardFadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.85;
+    }
+}
+
 .about-container {
     background-color: #c2fcb7;
     width: 100vw;
@@ -42,18 +52,6 @@
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
-}
-
-.about-content-brief {
-    border-bottom: 0.5px solid #36454f;
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 .about-content-stack {
@@ -83,13 +81,8 @@
 .tech-stack-scroll {
     display: flex;
     align-items: flex-start;
-    height: auto;
     width: 100%;
     animation: contentStackSlide 12s linear infinite;
-}
-
-.tech-stack-scroll:hover {
-    animation-play-state: paused;
 }
 
 .tech-stack-scroll-container::before,
@@ -160,21 +153,6 @@
     box-sizing: border-box;
 }
 
-.about-content-brief-text {
-    display: flex;
-    flex-direction: column;
-    padding: 0 80px;
-    justify-content: center;
-    max-width: 60%;
-    margin-right: 10px;
-}
-
-.about-content-brief-text p {
-    font-size: 1.35rem;
-    opacity: 0;
-    animation: contentBriefText 1s ease-in-out forwards;
-}
-
 .about-content-brief-text p:nth-child(1) {
     animation-delay: 0.5s;
 }
@@ -187,12 +165,8 @@
     animation-delay: 1.5s;
 }
 
-.about-content-brief-images {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.about-cotent-brief-text p:nth-child(4) {
+    animation-delay: 2s;
 }
 
 .carousel-item,
@@ -207,72 +181,7 @@
     object-fit: cover;
 }
 
-@media screen and (max-width: 500px) {
-
-    .about-content-brief {
-        height: auto;
-        padding: 10px 0;
-    }
-
-    .about-content-brief-text {
-        max-width: 100%;
-        font-size: 0.8rem;
-        padding: 0 20px;
-    }
-
-    .carousel-item img {
-        max-height: 250px;
-    }
-
-    .tech-stack-scroll>.card {
-        width: 12rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .about-content-brief {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .about-content-brief-text {
-        max-width: 100%;
-        font-size: 1.15rem;
-        margin-top: 50px;
-        padding: 0 60px;
-    }
-
-    .about-content-brief-images {
-        height: 100%;
-        width: 100%;
-    }
-
-    .carousel-item img {
-        max-height: 450px;
-    }
-
-    .tech-stack-scroll-container {
-        margin-top: 15px;
-        overflow: auto;
-        height: auto;
-    }
-
-    .tech-stack-scroll {
-        animation: none;
-        height: auto;
-    }
-
-    .tech-stack-scroll>.card {
-        width: 16rem;
-    }
-
-    .tech-stack-scroll-container::before {
-        left: 0;
-        background: none;
-    }
-
-    .tech-stack-scroll-container::after {
-        right: 0;
-        background: none;
-    }
+.tech-stack-card-item {
+    animation: techCardFadeIn 1s ease-in-out forwards;
+    opacity: 0;
 }

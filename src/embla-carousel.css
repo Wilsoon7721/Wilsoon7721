@@ -1,0 +1,22 @@
+.embla {
+    overflow: hidden;
+    display: flex;
+    --slide-spacing: 10px;
+    --slide-size: 100%;
+}
+
+.embla__container {
+    display: flex;
+    gap: var(--slide-spacing);
+
+    margin-left: calc(var(--slide-spacing));
+}
+
+.embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+}
+
+.embla__slide__img {
+    height: auto;
+}
