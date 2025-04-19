@@ -1,5 +1,6 @@
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import { Dialog } from "radix-ui";
 import Autoplay from 'embla-carousel-autoplay';
 
 export function IntroBriefImageCarousel() {
@@ -7,7 +8,11 @@ export function IntroBriefImageCarousel() {
         loop: true,
         align: 'center',
         containScroll: 'trimSnaps'
-    }, [Autoplay()]);
+    }, [Autoplay({
+        delay: 2500,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true
+    })]);
     const imageSrcs = [
         'await_image.png',
         'pexels-anjana-c-169994-674010.jpg',
