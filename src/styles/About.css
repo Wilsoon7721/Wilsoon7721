@@ -153,6 +153,17 @@
     box-sizing: border-box;
 }
 
+.about-content-brief-text p {
+    opacity: 0;
+    animation: contentBriefText 1s ease-in-out forwards;
+}
+
+#intro-brief-carousel {
+    opacity: 0;
+    animation: contentBriefImages 1s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
 .about-content-brief-text p:nth-child(1) {
     animation-delay: 0.5s;
 }
@@ -165,7 +176,7 @@
     animation-delay: 1.5s;
 }
 
-.about-cotent-brief-text p:nth-child(4) {
+.about-content-brief-text p:nth-child(4) {
     animation-delay: 2s;
 }
 

@@ -6,9 +6,9 @@ const TechStackCard = ({ category, title, image, backgroundColor, animationDelay
             <div className="card-header">
                 <h6 className="card-category-title">{category}</h6>
             </div>
-            <img src={image} className="card-img-top mx-auto" alt="..." />
+            <img src={image} className="card-img-top my-4 mx-auto" alt="..." />
             <div className="card-body">
-                <h5 className="card-title py-3 font-['Roboto'] text-center">{title}</h5>
+                <h5 className="card-title py-3 font-bold text-center">{title}</h5>
             </div>
         </div>
     );

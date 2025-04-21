@@ -19,7 +19,7 @@ export function IntroBriefImageCarousel() {
         'await_image.png'
     ]
     return (
-        <div className="embla w-[100%] lg:w-[40%] lg:max-w-[550px]" ref={emblaRef}>
+        <div id='intro-brief-carousel' className="embla w-[100%] lg:w-[40%] lg:max-w-[550px]" ref={emblaRef}>
             <div className="embla__container">
                 {imageSrcs.map((src, index) => {
                     return (

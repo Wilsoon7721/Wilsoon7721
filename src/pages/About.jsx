@@ -5,38 +5,75 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { XLg } from 'react-bootstrap-icons';
 import { IntroBriefImageCarousel } from '../components/IntroBriefCarousel';
 
+const projects = [
+    {
+        id: 1,
+        title: '',
+        description: '',
+        project_media: '', // Link to project media
+        weblink: '', // Link to live project
+        completed_year: 2020,
+        used_technologies: [1] // This ID refers to the techCards array
+    }
+]
+
 const techCards = [
     {
+        id: 1,
         category: 'Programming Language',
-        title: 'ABC',
-        image: 'await_image.png'
+        title: 'Java',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java.png?raw=true',
+        extended: {
+            start_date: '2019-08-24',
+            technology_website: 'https://www.java.com/',
+            additional_specialisations: ['Minecraft', 'Spigot Plugin Development', 'Android Development', 'Maven', 'Gradle'],
+            description: 'Java was my very first language, with most of my knowledge coming from developing Minecraft plugins. These plugins mostly involve creating custom commands and events that can be triggered by the player in game. Beyond that, I mostly learnt how to create basic GUIs using AWT as well as some Android development through Java.',
+            projects: [1], // This ID refers to the projects array
+        }
     },
     {
+        id: 2,
         category: 'Programming Language',
-        title: 'DEF',
-        image: 'await_image.png'
+        title: 'Python',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/python/python.png?raw=true'
     },
     {
+        id: 3,
         category: 'Programming Language',
-        title: 'GHI',
+        title: 'HTML',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html.png?raw=true'
+    },
+    {
+        id: 4,
+        category: 'Programming Language',
+        title: 'CSS',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css.png?raw=true'
+    },
+    {
+        id: 5,
+        category: 'Programming Language',
+        title: 'C#',
         image: 'await_image.png'
     },
     {
-        category: 'Framework',
-        title: 'JKL',
-        image: 'await_image.png'
-    },
-    {
+        id: 6,
         category: 'Service',
         title: 'LMN',
         image: 'await_image.png'
     },
     {
+        id: 7,
+        category: 'Framework',
+        title: 'LMN',
+        image: 'await_image.png'
+    },
+    {
+        id: 8,
         category: 'Database',
         title: 'OPQ',
         image: 'await_image.png'
     },
-]
+];
 
 const techColors = ['#FFF833', '#FE5A34', '#32EBFF'];
 
@@ -80,7 +117,7 @@ const About = () => {
         <div className='about-container'>
             <h3 className="text-center text-2xl mt-[3.5%] mb-0">About Me</h3>
             <div className="border-b border-[#36454f] font-['Roboto'] flex  flex-col md:flex-row w-full h-screen m-0 box-border">
-                <div className='flex flex-col justify-center px-8 mt-8 max-w-[100%] md:max-w-[65%] lg:max-w-[60%] mr-[5px] space-y-3 text-md lg:mt-0 lg:px-20 lg:text-lg xl:text-xl'>
+                <div className='about-content-brief-text flex flex-col justify-center px-8 mt-8 max-w-[100%] md:max-w-[65%] lg:max-w-[60%] mr-[5px] space-y-3 text-md lg:mt-0 lg:px-20 lg:text-lg xl:text-xl'>
                     <p>Hey! I'm Wilson Oon and I started coding when I was 13.</p>
                     <p>I started with Minecraft plugins that I would develop and play with on my server. Over the years, I used this passion for coding to develop websites and other applications for my own use.</p>
                     <p>Now, I mostly spend my time experimenting with new project ideas and seeing what I could make out of the programming languages and services that I know, while also learning new ones.</p>
@@ -97,7 +134,7 @@ const About = () => {
                     <div className='tech-stack-scroll'>
                         {[...techCards, ...techCards].map((card, index) => {
                             return (
-                                <TechStackCard animationDelay={`${index * 0.2}s`} category={card.category} title={card.title} image={card.image} backgroundColor={techColors[index % techColors.length]} key={index} />
+                                <TechStackCard animationDelay={`${index * 0.2}s`} category={card.category} title={card.title} image={card.image} backgroundColor={techColors[index % techColors.length]} key={index + 1} />
                             )
                         })}
                     </div>
@@ -117,8 +154,8 @@ const About = () => {
                         </div>
 
                         <div className="md:w-[70%] w-full md:h-full h-[60%] bg-[#c2fcb7] overflow-y-auto p-6">
-                            <div className="text-center text-gray-700 space-y-4">
-                                <h2 className="text-xl font-semibold">Right Side</h2>
+                            <div className="text-start px-12 py-4 text-gray-700 space-y-4">
+                                <h2 className="text-xl text-center font-semibold">Projects</h2>
                                 <p>This is the lighter side with scroll.</p>
 
                                 {Array.from({ length: 20 }).map((_, i) => (
