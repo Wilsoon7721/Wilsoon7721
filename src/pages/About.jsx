@@ -13,12 +13,12 @@ const projects = [
         project_media: null, // Link to project media
         weblink: 'https://github.com/Wilsoon7721/InvReturn/', // Link to live project
         completed_year: 2020,
-        used_technologies: [1] // This ID refers to the techCards array
+        used_technologies: [1] // This ID refers to the techCards array, or can be a string for additional technologies
     },
     {
         id: 2,
         title: 'SpotifyAutoSync',
-        description: 'The project came up as I was looking for a way to add my liked songs automatically to a playlist on Spotify without having to manually add them one by one.',
+        description: 'The project came up as I was looking for a way to add my liked songs automatically to one big playlist on Spotify without having to manually add them one by one.',
         weblink: null,
         project_media: null,
         completed_year: 2024,
@@ -36,10 +36,20 @@ const projects = [
     {
         id: 4,
         title: 'FoodTagsWeb',
-        description: 'FoodTagsWeb is a Python web application I created as a server ran on my Raspberry Pi. It is integrated with a Google Sheets spreadsheet that contains a list of the food and drinks in Singapore, and allows me to randomly search for food based on tags like Lunch, Dinner, Spicy, Soup-based.',
+        description: 'FoodTagsWeb is a Python web application I created as a server ran on my Raspberry Pi. It hosts a MySQL database with it and is integrated with a Google Sheets spreadsheet that contains a list of the food and drinks in Singapore, and allows me to randomly search for food based on tags like Lunch, Dinner, Spicy, Soup-based.',
         weblink: null,
         project_media: null,
-        completed_year: 2024
+        completed_year: 2024,
+        used_technologies: [2]
+    },
+    {
+        id: 5,
+        title: 'TaskManagementApplication',
+        description: 'TaskManagementApplication is integrated with a MySQL database to provide login functionality, while being able to create, delete, update tasks and assign tasks to different users in the same workspace.',
+        weblink: null,
+        project_media: null,
+        completed_year: 2024,
+        used_technologies: [3, 4, 5, 'Node.js', 'Express']
     }
 ]
 
