@@ -8,12 +8,38 @@ import { IntroBriefImageCarousel } from '../components/IntroBriefCarousel';
 const projects = [
     {
         id: 1,
-        title: '',
-        description: '',
-        project_media: '', // Link to project media
-        weblink: '', // Link to live project
+        title: 'InvReturn',
+        description: "InvReturn is a lightweight Spigot plugin that allows players to recover their dropped items from their inventory upon death. It is designed to be very simple, providing a single permission and command to access the plugin's features.",
+        project_media: null, // Link to project media
+        weblink: 'https://github.com/Wilsoon7721/InvReturn/', // Link to live project
         completed_year: 2020,
         used_technologies: [1] // This ID refers to the techCards array
+    },
+    {
+        id: 2,
+        title: 'SpotifyAutoSync',
+        description: 'The project came up as I was looking for a way to add my liked songs automatically to a playlist on Spotify without having to manually add them one by one.',
+        weblink: null,
+        project_media: null,
+        completed_year: 2024,
+        used_technologies: [2]
+    },
+    {
+        id: 3,
+        title: 'CalendarPlanner',
+        description: 'CalendarPlanner is a Python command-line application I created to practice OAuth integration with Google Calendar. It allows users to create, update, and delete events in the calendar. Additionally, I added functionality to allow events to be automatically deleted after the event time has passed.',
+        weblink: null,
+        project_media: null,
+        completed_year: 2023,
+        used_technologies: [2]
+    },
+    {
+        id: 4,
+        title: 'FoodTagsWeb',
+        description: 'FoodTagsWeb is a Python web application I created as a server ran on my Raspberry Pi. It is integrated with a Google Sheets spreadsheet that contains a list of the food and drinks in Singapore, and allows me to randomly search for food based on tags like Lunch, Dinner, Spicy, Soup-based.',
+        weblink: null,
+        project_media: null,
+        completed_year: 2024
     }
 ]
 
@@ -27,7 +53,7 @@ const techCards = [
             start_date: '2019-08-24',
             technology_website: 'https://www.java.com/',
             additional_specialisations: ['Minecraft', 'Spigot Plugin Development', 'Android Development', 'Maven', 'Gradle'],
-            description: 'Java was my very first language, with most of my knowledge coming from developing Minecraft plugins. These plugins mostly involve creating custom commands and events that can be triggered by the player in game. Beyond that, I mostly learnt how to create basic GUIs using AWT as well as some Android development through Java.',
+            description: 'Java was my very first programming language, with most of my knowledge coming from developing Minecraft plugins. These plugins mostly involve creating custom commands and events that can be triggered by the player in game. Beyond that, I mostly learnt how to create basic GUIs using AWT as well as some Android development through Java.',
             projects: [1], // This ID refers to the projects array
         }
     },
@@ -35,7 +61,14 @@ const techCards = [
         id: 2,
         category: 'Programming Language',
         title: 'Python',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/python/python.png?raw=true'
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/python/python.png?raw=true',
+        extended: {
+            start_date: '',
+            technology_website: 'https://www.python.org/',
+            additional_specialisations: ['Flask', ''],
+            description: "Python is my main language for most of my projects. I've used it several times for web development with Flask, but mostly use it for personal projects that integrate with the various services I use such as Spotify.",
+            projects: [] // This ID refers to the projects array
+        }
     },
     {
         id: 3,
@@ -46,29 +79,35 @@ const techCards = [
     {
         id: 4,
         category: 'Programming Language',
-        title: 'CSS',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css.png?raw=true'
+        title: 'JavaScript',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript.png?raw=true'
     },
     {
         id: 5,
         category: 'Programming Language',
-        title: 'C#',
-        image: 'await_image.png'
+        title: 'CSS',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css.png?raw=true'
     },
     {
         id: 6,
+        category: 'Programming Language',
+        title: 'C#',
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/csharp/csharp.png?raw=true'
+    },
+    {
+        id: 7,
         category: 'Service',
         title: 'LMN',
         image: 'await_image.png'
     },
     {
-        id: 7,
+        id: 8,
         category: 'Framework',
         title: 'LMN',
         image: 'await_image.png'
     },
     {
-        id: 8,
+        id: 9,
         category: 'Database',
         title: 'OPQ',
         image: 'await_image.png'
