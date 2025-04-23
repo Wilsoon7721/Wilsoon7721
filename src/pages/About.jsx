@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../styles/About.css';
 import TechStackCard from '../components/TechStackCard';
+import MediaContent from '../components/MediaContent';
 import * as Dialog from '@radix-ui/react-dialog';
 import { XLg } from 'react-bootstrap-icons';
 import { IntroBriefImageCarousel } from '../components/IntroBriefCarousel';
@@ -195,8 +196,8 @@ const About = () => {
             <Dialog.Root>
                 <Dialog.Trigger className="px-4 py-2 bg-green-400 rounded-md">Open Modal</Dialog.Trigger>
                 <Dialog.Portal>
-                    <Dialog.Overlay className="fixed inset-0 bg-black/30 z-40" />
-                    <Dialog.Content className="fixed top-1/2 left-1/2 z-50 w-[75vw] h-[80vh] -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl">
+                    <Dialog.Overlay className="fixed inset-0 bg-black/30 z-100" />
+                    <Dialog.Content className="fixed top-1/2 left-1/2 w-[75vw] h-[80vh] -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl z-150">
 
                         <div className="w-full md:w-[40%] lg:w-[30%] md:h-full h-[40%] bg-[#256317] p-6 flex items-center justify-center md:rounded-l-xl md:rounded-t-none rounded-t-xl overflow-y-auto">
                             <div className="text-white text-center space-y-2">
@@ -214,7 +215,12 @@ const About = () => {
                                 <p className='text-lg mt-4 mb-6'>DESCRIPTION</p>
                                 <h2 className="text-xl text-center font-semibold">Projects</h2>
                                 <div className="flex flex-col md:flex-row">
-                                    <MediaContent />
+                                    <MediaContent type='folder' hyperlink='https://www.google.com' />
+                                    <div className="flex-col">
+                                        <h5 className='text-lg font-bold'>Project Name</h5>
+                                        <p className='text-xs lg:text-base my-2'>Project Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
+                                        <p className='text-xs lg:text-base my-2'>Skills, Completed Year</p>
+                                    </div>
                                 </div>
                                 {Array.from({ length: 20 }).map((_, i) => (
                                     <p key={i}>
