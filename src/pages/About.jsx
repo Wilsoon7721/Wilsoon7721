@@ -198,18 +198,24 @@ const About = () => {
                     <Dialog.Overlay className="fixed inset-0 bg-black/30 z-40" />
                     <Dialog.Content className="fixed top-1/2 left-1/2 z-50 w-[75vw] h-[80vh] -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row rounded-xl overflow-hidden shadow-2xl">
 
-                        <div className="w-full md:w-[40%] lg:w-[30%] md:h-full h-[40%] bg-[#256317] p-6 flex items-center justify-center md:rounded-l-xl md:rounded-t-none rounded-t-xl">
-                            <div className="text-center text-white space-y-2">
-                                <h2 className="text-xl font-semibold">Left Side</h2>
-                                <p>This is the darker side</p>
+                        <div className="w-full md:w-[40%] lg:w-[30%] md:h-full h-[40%] bg-[#256317] p-6 flex items-center justify-center md:rounded-l-xl md:rounded-t-none rounded-t-xl overflow-y-auto">
+                            <div className="text-white text-center space-y-2">
+                                <img className='w-24 h-24 lg:w-36 lg:h-36 mt-12 mx-auto md:mt-0 mb-6' src='https://github.com/abranhe/programming-languages-logos/blob/master/src/java/java.png?raw=true'></img>
+                                <h2 className="text-xl font-semibold">Language Name</h2>
+                                <p className='text-md'>Type: Programming Language</p>
+                                <p className='text-md'>X years of experience (calculate start date)</p>
+                                <p className='text-md'>Primary Specialisations: LIST</p>
+                                <p className='text-md'><a target='_blank' rel='noopener noreferrer' className='text-white font-bold underline hover:text-green-500' href='https://www.google.com'>Technology Website</a></p>
                             </div>
                         </div>
 
                         <div className="md:w-[70%] w-full md:h-full h-[60%] bg-[#c2fcb7] overflow-y-auto p-6">
                             <div className="text-start px-12 py-4 text-gray-700 space-y-4">
+                                <p className='text-lg mt-4 mb-6'>DESCRIPTION</p>
                                 <h2 className="text-xl text-center font-semibold">Projects</h2>
-                                <p>This is the lighter side with scroll.</p>
-
+                                <div className="flex flex-col md:flex-row">
+                                    <MediaContent />
+                                </div>
                                 {Array.from({ length: 20 }).map((_, i) => (
                                     <p key={i}>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula urna in turpis faucibus, et varius nunc fermentum.
