@@ -47,7 +47,7 @@ const projects = [
         title: 'TaskManagementApplication',
         description: 'TaskManagementApplication is integrated with a MySQL database to provide login functionality, while being able to create, delete, update tasks and assign tasks to different users in the same workspace.',
         weblink: null,
-        project_media: null,
+        project_media: 'video,https://www.youtube.com/watch?v=ETE_U60vwgI',
         completed_year: 2024,
         used_technologies: [3, 4, 5, 'Node.js', 'Express']
     }
@@ -73,18 +73,21 @@ const techCards = [
         title: 'Python',
         image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/python/python.png?raw=true',
         extended: {
-            start_date: '',
+            start_date: '2021-01-27',
             technology_website: 'https://www.python.org/',
-            additional_specialisations: ['Flask', ''],
+            additional_specialisations: ['Flask'],
             description: "Python is my main language for most of my projects. I've used it several times for web development with Flask, but mostly use it for personal projects that integrate with the various services I use such as Spotify.",
-            projects: [] // This ID refers to the projects array
+            projects: [2, 3, 4] // This ID refers to the projects array
         }
     },
     {
         id: 3,
         category: 'Programming Language',
         title: 'HTML',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html.png?raw=true'
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html.png?raw=true',
+        extended: {
+
+        }
     },
     {
         id: 4,
