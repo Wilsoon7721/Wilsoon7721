@@ -217,7 +217,7 @@ const About = () => {
                                 <p className='text-lg mt-4 mb-6'>DESCRIPTION</p>
                                 <h2 className="text-xl text-center font-semibold">Projects</h2>
 
-                                <div className="flex flex-col md:flex-row">
+                                <div className="flex flex-col md:flex-row my-4">
                                     <MediaContent type='folder' hyperlink='https://www.google.com' />
                                     <div className="flex flex-col">
                                         <h5 className='text-lg font-bold'>Project Name</h5>
