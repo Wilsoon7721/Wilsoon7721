@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../styles/About.css';
 import TechStackCard from '../components/TechStackCard';
 import MediaContent from '../components/MediaContent';
+import SkillUsageDisplay from '../components/SkillUsageDisplay';
+import ProjectState from '../components/ProjectState';
 import * as Dialog from '@radix-ui/react-dialog';
 import { XLg } from 'react-bootstrap-icons';
 import { IntroBriefImageCarousel } from '../components/IntroBriefCarousel';
@@ -214,15 +216,19 @@ const About = () => {
                             <div className="text-start px-12 py-4 text-gray-700 space-y-4">
                                 <p className='text-lg mt-4 mb-6'>DESCRIPTION</p>
                                 <h2 className="text-xl text-center font-semibold">Projects</h2>
+
                                 <div className="flex flex-col md:flex-row">
                                     <MediaContent type='folder' hyperlink='https://www.google.com' />
-                                    <div className="flex-col">
+                                    <div className="flex flex-col">
                                         <h5 className='text-lg font-bold'>Project Name</h5>
-                                        <SkillPill
-                                        <p className='text-xs lg:text-base my-2'>Project Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
-                                        <p className='text-xs lg:text-base my-2'>Skills, Completed Year</p>
+                                        <div className="flex flex-row items-center">
+                                            <ProjectState published={false} completion_year={2023} />
+                                            <SkillUsageDisplay skills={['React', 'Bootstrap', 'JavaScript', 'HTML', 'CSS']} />
+                                        </div>
+                                        <p className='text-xs lg:text-base my-2'>Project Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
                                     </div>
                                 </div>
+
                                 {Array.from({ length: 20 }).map((_, i) => (
                                     <p key={i}>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula urna in turpis faucibus, et varius nunc fermentum.

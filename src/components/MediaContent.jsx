@@ -26,14 +26,14 @@ const MediaContent = ({ type, media_url, hyperlink }) => {
 
     if (type === 'image') {
         return (
-            <div className="flex flex-col mr-8">
+            <div className="flex flex-col mr-8 mx-auto">
                 <img src={media_url} className="w-48 h-32 object-cover cursor-pointer" />
                 <h6 className="text-sm text-center my-2 text-gray-600">Click to enlarge image</h6>
             </div>
         )
     } else if (type === 'video') {
         return (
-            <div className="flex flex-col mr-8">
+            <div className="flex flex-col mx-auto mr-8">
                 <video ref={videoRef} className="w-48 h-32 object-cover cursor-pointer" onClick={videoClick} preload="metadata">
                     <source src={media_url} />
                     Your browser does not support the video tag.
@@ -46,7 +46,7 @@ const MediaContent = ({ type, media_url, hyperlink }) => {
     } else if (type === 'folder') {
         return (
             <div className="flex flex-col mr-8">
-                <div onClick={folderClick} className="cursor-pointer flex justify-center items-center w-48 h-32 bg-[rgba(80,120,80,0.35)] rounded-xl border-gray-600 border-1">
+                <div onClick={folderClick} className="cursor-pointer flex justify-center mx-auto items-center w-48 h-32 bg-[rgba(80,120,80,0.35)] rounded-xl border-gray-600 border-1">
                     {folderClicked ? <Folder2Open size={32} /> : <Folder2 size={32} />}
                 </div>
                 <h6 className="text-sm text-center my-2 text-gray-600">Showcase Resources</h6>
