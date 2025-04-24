@@ -218,6 +218,7 @@ const About = () => {
                                     <MediaContent type='folder' hyperlink='https://www.google.com' />
                                     <div className="flex-col">
                                         <h5 className='text-lg font-bold'>Project Name</h5>
+                                        <SkillPill
                                         <p className='text-xs lg:text-base my-2'>Project Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
                                         <p className='text-xs lg:text-base my-2'>Skills, Completed Year</p>
                                     </div>
