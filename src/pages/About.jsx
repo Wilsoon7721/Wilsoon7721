@@ -16,6 +16,7 @@ const projects = [
         project_media: null, // Link to project media
         weblink: 'https://github.com/Wilsoon7721/InvReturn/', // Link to live project
         completed_year: 2020,
+        publish_status: true,
         used_technologies: [1] // This ID refers to the techCards array, or can be a string for additional technologies
     },
     {
@@ -25,6 +26,7 @@ const projects = [
         weblink: null,
         project_media: null,
         completed_year: 2024,
+        publish_status: false,
         used_technologies: [2]
     },
     {
@@ -34,15 +36,17 @@ const projects = [
         weblink: null,
         project_media: null,
         completed_year: 2023,
+        publish_status: false,
         used_technologies: [2]
     },
     {
         id: 4,
         title: 'FoodTagsWeb',
-        description: 'FoodTagsWeb is a Python web application I created as a server ran on my Raspberry Pi. It hosts a MySQL database with it and is integrated with a Google Sheets spreadsheet that contains a list of the food and drinks in Singapore, and allows me to randomly search for food based on tags like Lunch, Dinner, Spicy, Soup-based.',
+        description: 'FoodTagsWeb is a Python web application I created as a server ran on my Raspberry Pi. It hosts a MySQL database along with a Flask server to process web requests and is integrated with a Google Sheets spreadsheet that contains a list of the food and drinks in Singapore, and allows me to randomly search for food based on tags like Lunch, Dinner, Spicy, and Soup-based.',
         weblink: null,
         project_media: null,
         completed_year: 2024,
+        publish_status: false,
         used_technologies: [2]
     },
     {
@@ -52,6 +56,7 @@ const projects = [
         weblink: null,
         project_media: 'video,https://www.youtube.com/watch?v=ETE_U60vwgI',
         completed_year: 2024,
+        publish_status: false,
         used_technologies: [3, 4, 5, 'Node.js', 'Express']
     }
 ]
@@ -65,8 +70,8 @@ const techCards = [
         extended: {
             start_date: '2019-08-24',
             technology_website: 'https://www.java.com/',
-            additional_specialisations: ['Minecraft', 'Spigot Plugin Development', 'Android Development', 'Maven', 'Gradle'],
-            description: 'Java was my very first programming language, with most of my knowledge coming from developing Minecraft plugins. These plugins mostly involve creating custom commands and events that can be triggered by the player in game. Beyond that, I mostly learnt how to create basic GUIs using AWT as well as some Android development through Java.',
+            additional_specialisations: ['Minecraft', 'Spigot Plugin Development', 'Android Development', 'Discord Bot Development (Javacord)', 'Maven', 'Gradle'],
+            description: 'Java was my very first programming language, with most of my knowledge coming from developing Minecraft plugins. These plugins mostly involve creating custom commands and events that can be triggered by the player in game. Beyond that, I mostly learnt how to develop Discord bots with Javacord and create basic GUIs using AWT. In the starting years, I also used Java for Android development.',
             projects: [1], // This ID refers to the projects array
         }
     },
@@ -89,38 +94,71 @@ const techCards = [
         title: 'HTML',
         image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/html/html.png?raw=true',
         extended: {
-
+            start_date: '2021-04-30',
+            technology_website: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+            additional_specialisations: null,
+            description: "HTML, being one of the core three languages for web development, was one of the languages I learnt and mainly work on for my projects until today as I continue learning frameworks like React.",
+            projects: [5]
         }
     },
     {
         id: 4,
         category: 'Programming Language',
         title: 'JavaScript',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript.png?raw=true'
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/javascript/javascript.png?raw=true',
+        extended: {
+            start_date: '2021-04-30',
+            technology_website: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+            additional_specialisations: ['Node.js', 'Express'],
+            description: "JavaScript is one of the other languages I'm planning to use for most of my projects. While I still use it mostly for web development, I am trying to expand more into native Node.js applications.",
+            projects: [5]
+        }
     },
     {
         id: 5,
         category: 'Programming Language',
         title: 'CSS',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css.png?raw=true'
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/css/css.png?raw=true',
+        extended: {
+            start_date: '2021-04-30',
+            technology_website: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+            additional_specialisations: null,
+            description: null,
+            projects: [5]
+        }
     },
     {
         id: 6,
         category: 'Programming Language',
         title: 'C#',
-        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/csharp/csharp.png?raw=true'
+        image: 'https://github.com/abranhe/programming-languages-logos/blob/master/src/csharp/csharp.png?raw=true',
+        extended: {
+            start_date: '2023-07-26',
+            technology_website: 'https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/overview',
+            additional_specialisations: null,
+            description: "I started learning C# in 2023 and planned to create little features to enhance Windows for myself. However, I didn't really continue exploring C# much and mostly spent time with web development. However, I do have plans to return to it soon.",
+            projects: null
+        }
     },
     {
         id: 7,
-        category: 'Service',
-        title: 'LMN',
-        image: 'await_image.png'
+        category: 'Framework',
+        title: 'Bootstrap',
+        image: 'https://github.com/twbs/bootstrap/blob/main/site/static/docs/%5Bversion%5D/assets/brand/bootstrap-logo.svg?raw=true',
+        extended: {
+            start_date: '2023-11-28',
+            technology_website: 'https://getbootstrap.com/',
+            additional_specialisations: null,
+            description: "I started learning Bootstrap recently as a means to help build more responsive websites while avoiding repetitive code. I also used a few of Bootstrap's features in various projects including my Task Management application.",
+            projects: [5]
+        }
     },
     {
         id: 8,
-        category: 'Framework',
-        title: 'LMN',
-        image: 'await_image.png'
+        category: 'Service',
+        title: 'MySQL',
+        image: 'https://labs.mysql.com/common/logos/mysql-logo.svg?v2',
+        
     },
     {
         id: 9,
@@ -133,6 +171,8 @@ const techCards = [
 const techColors = ['#FFF833', '#FE5A34', '#32EBFF'];
 
 const About = () => {
+    const [modalDisplayedTechCardId, setDisplayedTechStackCardId] = useState(0);
+
     const [showHint, setShowHint] = useState(false);
     const hintShown = useRef(false);
     const stackRef = useRef(null);
@@ -216,8 +256,7 @@ const About = () => {
                             <div className="text-start px-12 py-4 text-gray-700 space-y-4">
                                 <p className='text-lg mt-4 mb-6'>DESCRIPTION</p>
                                 <h2 className="text-xl text-center font-semibold">Projects</h2>
-
-                                <div className="flex flex-col md:flex-row my-4">
+                                <div className="flex flex-col md:flex-row my-4" id="projects-container">
                                     <MediaContent type='folder' hyperlink='https://www.google.com' />
                                     <div className="flex flex-col">
                                         <h5 className='text-lg font-bold'>Project Name</h5>
@@ -228,17 +267,11 @@ const About = () => {
                                         <p className='text-xs lg:text-base my-2'>Project Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description</p>
                                     </div>
                                 </div>
-
-                                {Array.from({ length: 20 }).map((_, i) => (
-                                    <p key={i}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vehicula urna in turpis faucibus, et varius nunc fermentum.
-                                    </p>
-                                ))}
                             </div>
                         </div>
 
                         <Dialog.Close asChild>
-                            <button className="text-white absolute top-4 right-4 md:text-gray-500 hover:text-black transition">
+                            <button className="text-white absolute top-4 right-4 md:text-gray-500 hover:text-black transition cursor-pointer">
                                 <XLg size={20} />
                             </button>
                         </Dialog.Close>
