@@ -1,23 +1,26 @@
 <div align="center">
-  <img src="images/banner.jpg" width="100%" alt="Wilson - Top Banner" />
+  <img src="images/banner.jpg" width="100%" alt="Wilson Oon - Top Banner" />
 </div>
 
 <br/>
 
 <div align="center">
 
-# Hi, I'm Wilson 👋
+# Hi, I'm Wilson Oon 👋
 
-**Developer | Psychology Enthusiast | Student**
+**Full-stack developer based in Singapore.**
 
+<a href="https://wilsoon.dev" target="_blank">
+  <img src="https://img.shields.io/badge/Portfolio-wilsoon.dev-7038ba?style=for-the-badge&logo=google-chrome&logoColor=white" />
+</a>
 <a href="https://linkedin.com/in/wilsonoon7172/" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
 </a>
+<a href="https://t.me/Calorious" target="_blank">
+  <img src="https://img.shields.io/badge/Telegram-Message-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" />
+</a>
 <a href="mailto:hello@wilsoon.dev">
   <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
-</a>
-<a href="https://wilsoon.dev" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-Visit_Site-7038ba?style=for-the-badge&logo=google-chrome&logoColor=white" />
 </a>
 
 </div>
@@ -25,25 +28,40 @@
 <br/>
 
 ## 🚀 About Me
-I am a developer based in **Singapore**, focused on building robust backend systems and clean web solutions. I have a passion for solving architectural problems and creating efficient, maintainable code.
+I learn by rebuilding systems from scratch, from an OAuth 2.0 / OIDC identity provider to a peer-to-peer WebRTC file relay, rather than treating them as black boxes. I work mainly with **TypeScript**, **Next.js** and edge platforms like **Cloudflare Workers** and **Vercel**, with a strong interest in web security.
 
-Currently working on freelance projects and expanding my knowledge on AI and full-stack development with Electron.
+Currently studying for a Diploma in Information Technology at Nanyang Polytechnic. You can see what I'm up to [right now](https://wilsoon.dev/now).
+
+---
+
+## 🧩 Some Of My Work
+
+| Project | What it is |
+| --- | --- |
+| [**Federated Identity Provider**](https://id.wilsoon.dev) | A custom OIDC / OAuth 2.0 identity provider delivering single sign-on across every wilsoon.dev subdomain. Built from scratch instead of using an off-the-shelf provider, to understand each security layer first-hand. |
+| [**OIDC Client Packages**](https://github.com/Wilsoon7721/node-oidc-kit) | Open-source OpenID Connect packages: [`@wilsoon/auth-core`](https://www.npmjs.com/package/@wilsoon/auth-core), a framework-agnostic relying party for browsers, Node and edge runtimes, with React and Next.js bindings. |
+| [**WebRTC P2P Relay**](https://files.wilsoon.dev/transfer) | Browser-to-browser file transfer using Cloudflare Durable Objects for WebSocket signalling and STUN/TURN for NAT traversal. Parallel DataChannel streaming raised transfer speeds from ~3 MB/s to ~55 MB/s. |
+| [**@wilsoon/env**](https://www.npmjs.com/package/@wilsoon/env) | End-to-end encrypted environment variable management, synced across devices through a storage provider of your choosing, with OIDC support. |
+
+More on [wilsoon.dev/projects](https://wilsoon.dev/projects), with write-ups on [docs.wilsoon.dev](https://docs.wilsoon.dev) and small utilities on [tools.wilsoon.dev](https://tools.wilsoon.dev).
 
 ---
 
 ## 🛠️ Tech Stack
 
-### **Frontend & Interface**
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+### **Languages**
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![SQL](https://img.shields.io/badge/sql-%23336791.svg?style=for-the-badge)
 
-### **Backend & Systems**
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
+### **Frontend**
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white) ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### **Cloud & Deployment**
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-%2346E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Netlify](https://img.shields.io/badge/netlify-%2300C7B7.svg?style=for-the-badge&logo=netlify&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
+### **Backend**
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![PostgreSQL](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Redis](https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white)
 
-### **Tools & DevOps**
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+### **Cloud**
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-F38020?style=for-the-badge&logo=cloudflare&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+
+Full list on [wilsoon.dev/skills](https://wilsoon.dev/skills).
 
 ---
 
